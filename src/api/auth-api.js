@@ -1,4 +1,5 @@
 import axios from "axios";
+import {updateToken} from "../App";
 
 export const server = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
@@ -25,6 +26,7 @@ server.interceptors.request.use(async (config) => {
         checkStatus(200, status);
 
         localStorage.setItem(process.env.REACT_APP_ACCESS_TOKEN, access_token);
+        updateToken(access_token);
         config.headers.Authorization = currentToken();
         return config
     } catch (e) {

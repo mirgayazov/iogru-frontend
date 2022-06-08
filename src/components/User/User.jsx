@@ -55,7 +55,7 @@ const User = ({user, onDelete, onSelect}) => {
             className="d-flex justify-content-between align-items-start"
         >
             <div className="ms-2 me-auto">
-                <div className="fw-bold">{user.lastName} {user.firstName}</div>
+                <div className="fw-bold text-break">{user.lastName} {user.firstName}</div>
                 Возраст: {user.age}
             </div>
             <Edit

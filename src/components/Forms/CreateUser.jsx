@@ -29,13 +29,14 @@ export const CreateUser = (props) => {
                         const {status, data: user} = response;
 
                         if (status === 201) {
-                            props.addUser(user)
+                            props.addUser(user);
+                            toast.success('Пользователь создан', {autoClose: 1500});
                         }
                         helpers.resetForm();
                         helpers.setSubmitting(false);
                     })
                     .catch(() => {
-                        toast.warn('Авторизуйтесь', {autoClose: 1500})
+                        toast.warn('Авторизуйтесь', {autoClose: 1500});
                         helpers.setSubmitting(false);
                     })
             }}
