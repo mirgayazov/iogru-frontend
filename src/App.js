@@ -44,10 +44,14 @@ const App = () => {
     }, [])
 
     const onDelete = (id) => {
-        let filtered = users.filter(({_id}) => _id !== id);
-        if (currentUser._id === id) {
-            setCurrentUser(null);
+        let filtered = users.filter((user) => user._id !== id);
+
+        if  (currentUser) {
+            if (currentUser._id === id) {
+                setCurrentUser(null);
+            }
         }
+
         setUsers(filtered);
     }
 

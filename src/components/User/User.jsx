@@ -43,7 +43,8 @@ const User = ({user, onDelete, onSelect}) => {
                     toast.success('Пользователь удален', {autoClose: 1500})
                 }
             })
-            .catch(() => {
+            .catch((e) => {
+                console.log(e)
                 toast.warn('Авторизуйтесь', {autoClose: 1500})
             })
     }
